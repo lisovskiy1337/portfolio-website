@@ -78,7 +78,7 @@ const About = () => {
               />
             ))}
             <div
-              className="line absolute left-0 bottom-0 bg-[color:var(--text-color)] transition-all duration-1000"
+              className="line h-[2px] absolute left-0 bottom-0 bg-[color:var(--text-color)] transition-all duration-1000"
               style={{ width: `${line}%` }}
             ></div>
           </div>

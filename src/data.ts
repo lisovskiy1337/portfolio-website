@@ -1,7 +1,7 @@
 export const portfolioData = [
   {
     id: 0,
-    img: "ricco.png",
+    img: "ricco.webp",
     url: "https://ricco-1.netlify.app/",
     body: {
       title: "Modern Landing Website",
@@ -11,7 +11,7 @@ export const portfolioData = [
   },
   {
     id: 1,
-    img: "movibes.png",
+    img: "movibes.webp",
     url: "https://movibes123.netlify.app/",
     body: {
       title: "Movies Web App",
@@ -21,7 +21,7 @@ export const portfolioData = [
   },
   {
     id: 2,
-    img: "colors.png",
+    img: "colors.webp",
     url: "https://color-ideas.netlify.app/",
     body: {
       title: "Color Picker Website",
@@ -31,7 +31,7 @@ export const portfolioData = [
   },
   {
     id: 3,
-    img: "vincent.png",
+    img: "vincent.webp",
     url: "https://van-gogh228.netlify.app/",
 
     body: {

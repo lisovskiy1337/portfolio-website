@@ -47,7 +47,11 @@ const About = () => {
       <div className="container">
         <h3 className="text-4xl mb-12 text-center">About me</h3>
         <div className="grid grid-cols-1  lg:grid-cols-2 gap-8 place-items-center">
-          <img className="rounded-2xl max-h-96" src="./about.png" alt="about" />
+          <img
+            className="rounded-2xl max-h-96"
+            src="./about.webp"
+            alt="about"
+          />
           <p className="text-left lg:mt-32 leading-relaxed lg:max-w-md">
             I'm a passionate Junior Front-End Developer skilled in HTML,
             CSS/SCSS, JavaScript, React, Redux, and Tailwind. <br /> I bring

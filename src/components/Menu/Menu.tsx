@@ -40,7 +40,7 @@ const Menu: React.FC<IProps> = ({ menuOpen, setMenuOpen, heroHeight }) => {
     >
       <ul className={`flex gap-10 `} ref={ulRef}>
         {MenuData.map((li) => (
-          <MenuLi key={li.id} {...li} setTabIndex={setTabIndex} />
+          <MenuLi key={li.id} {...li} setTabIndex={setTabIndex} setMenuOpen={setMenuOpen}/>
         ))}
       </ul>
       <div

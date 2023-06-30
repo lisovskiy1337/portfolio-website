@@ -4,9 +4,10 @@ interface ILi {
   id: number;
   title: string;
   setTabIndex: Dispatch<SetStateAction<number>>;
+  setMenuOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const MenuLi: React.FC<ILi> = ({ id, title, setTabIndex }) => {
+const MenuLi: React.FC<ILi> = ({ id, title, setTabIndex, setMenuOpen }) => {
   return (
     <li
       onMouseEnter={() => setTabIndex(id)}
@@ -15,6 +16,7 @@ const MenuLi: React.FC<ILi> = ({ id, title, setTabIndex }) => {
       <a
         href={`#${title.toLowerCase()}`}
         className="p-2 text-xl mobmenu:text-lg"
+        onClick={() => setMenuOpen(false)}
       >
         {title}
       </a>

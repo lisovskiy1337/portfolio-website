@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy, useState } from "react";
 
+const LazyHeader = lazy(() => import("./components/Header/Header"));
+const LazyAbout = lazy(() => import("./components/About/About"));
+const LazyContact = lazy(() => import("./components/Contact/Contact"));
+const LazyPortfolio = lazy(() => import("./components/Portfolio/Portfolio"));
+const LazyFooter = lazy(() => import("./components/Footer/Footer"));
+const LazyHero = lazy(() => import("./components/Hero/Hero"));
 function App() {
+  const [heroHeight, setHeroHeight] = useState<number>(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <LazyHeader heroHeight={heroHeight} />
+      <main>
+        <LazyHero setHeroHeight={setHeroHeight} />
+        <LazyAbout />
+        <LazyPortfolio />
+        <LazyContact />
+      </main>
+      <LazyFooter />
+    </>
   );
 }
 

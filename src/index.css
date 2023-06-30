@@ -1,13 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --alpha: 0.4;
+}
+html {
+  scroll-behavior: smooth;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --text-color: rgb(254, 254, 254);
+  --bkg-color: rgb(3, 2, 53);
+  --transition-delay: 0.5s;
+  --bkg-rgb: 3, 2, 53;
+  transition: var(--transition-delay) ease-in-out;
+  color: var(--text-color);
+  background: var(--bkg-color);
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body.light {
+  --text-color: rgb(38, 38, 38);
+  --bkg-color: rgb(254, 254, 254);
+  --bkg-rgb: 103, 114, 153;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 107rem;
+}
+
+section {
+  min-height: 100vh;
+  padding: 5rem 5%;
+}
+a {
+  color: var(--text-color);
+  transition: var(--transition-delay) linear;
+}
+.hero {
+  background: rgb(48, 48, 156);
+  background: linear-gradient(
+    0deg,
+    rgba(48, 48, 156, 1) 37%,
+    rgba(10, 79, 93, 1) 85%,
+    rgba(2, 0, 36, 1) 030235%
+  );
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 70%;
+  transform: translate(50%, -50%);
+  width: 8rem;
+  height: 8rem;
+  background: #b5b4b4c3;
+  opacity: 0.6;
+  filter: blur(6rem);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 20%;
+  transform: translate(50%, -50%);
+  width: 8rem;
+  height: 8rem;
+  background: #b5b4b4c3;
+  opacity: 0.6;
+  filter: blur(6rem);
+}
+
+body.dark header {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+}
+
+@media screen and (max-width: 678px) {
+  nav {
+    position: fixed;
+    top: 5.5rem;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: rgba(var(--bkg-rgb), var(--alpha));
+  }
+
+  nav::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(18rem);
+    filter: blur(18rem);
+    z-index: -1;
+  }
+
+  nav > ul {
+    padding: 2rem 0;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@keyframes lineExpand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes opacit {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 100%;
+    transform: scale(1);
+  }
+}
+
+.array-item {
+  padding: 10px;
+  margin: 5px;
+  transition: transform 0.5s;
+}
+
+.array-item.transition {
+  animation: opacit 1s forwards;
 }
